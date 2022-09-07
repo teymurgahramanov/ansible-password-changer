@@ -1,5 +1,5 @@
 # Password-Changer
-_Ansible playbook for generating passwords for multiple users on multiple hosts. Will generate CSV report importable to password manager solution._
+_Ansible playbook for generating passwords for multiple users on multiple hosts and creating CSV report importable to password manager solution._
 
 ## Usage:
 1. Define users and target servers in yaml file (ex. users.yml)
