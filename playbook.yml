@@ -1,0 +1,26 @@
+--- 
+
+- name: Password changer
+  hosts: localhost
+  any_errors_fatal: true
+  gather_facts: false
+
+  tasks:
+
+    - name: Add host
+      add_host:
+        name: "{{ item }}"
+        groups: targets
+      with_items:  
+         - "{{ targets }}"       
+      tags:
+        - always
+
+- hosts: targets
+  become: True
+  gather_facts: True
+
+  tasks:
+
+    - include_tasks: password.yml
+      loop: "{{ users }}"
